@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from tile import Tile
-from piece import Piece
+from piece import Pawn, King
 
 class Board(tk.Frame):
     def __init__(self, parent):
@@ -21,7 +21,7 @@ class Board(tk.Frame):
                 if (x+y) % 2 == 0:
                     color='white'
 
-                self.tiles.append(Tile(self, x, y, Piece(x,y), color))
+                self.tiles.append(Tile(self, x, y, King(x,y), color))
 
     def update_board(self)->None:
         '''
